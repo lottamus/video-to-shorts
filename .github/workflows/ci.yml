@@ -1,0 +1,41 @@
+name: Build Extensions
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+
+      - name: Install dependencies
+        uses: ./.github/actions/yarn-nm-install
+
+      - name: Lint
+        run: yarn ci
+
+      - name: Test
+        run: yarn test
+
+      - name: Build
+        run: yarn build
+
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: video-to-shorts
+          path: packages/cli/dist

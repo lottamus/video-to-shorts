@@ -1,0 +1,26 @@
+{
+  "name": "video-to-shorts",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "start": "turbo start",
+    "lint": "biome check .",
+    "lint.fix": "biome check --write .",
+    "lint.ci": "biome ci .",
+    "test": "turbo test",
+    "clean": "turbo clean",
+    "changelog": "changeset add",
+    "release": "turbo run build lint test && changeset version && changeset publish"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@changesets/cli": "^2.27.12",
+    "@turbo/gen": "^2.4.0",
+    "turbo": "^2.4.0"
+  },
+  "packageManager": "yarn@4.6.0",
+  "workspaces": [
+    "packages/*"
+  ]
+}
