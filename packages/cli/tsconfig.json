@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "baseUrl": ".",
+    "noEmit": false,
+    "paths": {
+      "@shipworthy/video-processor": ["../video-processor/src"]
+    }
+  },
+  "include": ["src/**/*"],
+  "references": [{ "path": "../video-processor" }]
+}
