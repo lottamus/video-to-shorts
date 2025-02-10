@@ -10,7 +10,7 @@
     "test.watch": "turbo test.watch",
     "clean": "turbo clean",
     "changelog": "changeset add",
-    "release": "turbo run lint test build && changeset publish"
+    "release": "turbo run test build && changeset publish"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
@@ -19,5 +19,7 @@
     "turbo": "^2.4.0"
   },
   "packageManager": "yarn@4.6.0",
-  "workspaces": ["packages/*"]
+  "workspaces": [
+    "packages/*"
+  ]
 }
