@@ -1,6 +1,6 @@
 {
   "name": "@shipworthy/video-to-shorts",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "bin": "./dist/index.js",
   "type": "module",
   "scripts": {
